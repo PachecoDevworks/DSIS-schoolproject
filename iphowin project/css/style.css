@@ -126,6 +126,7 @@
 
 .icon-mobile-nav[name="close-outline"] {
   display: none;
+  color: #333;
 }
 
 /* NAV OPEN */
