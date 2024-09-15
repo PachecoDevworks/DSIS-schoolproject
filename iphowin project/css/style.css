@@ -21,7 +21,22 @@
 /**************************/
 /* NAVIGATION */
 /**************************/
+/* 
 .main-nav-list li a::before {
+  content: "";
+  background: #edf0f1;
+  display: block;
+  height: 0.25rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform ease-in-out 0.3s;
+} */
+
+.main-nav-list li a:not(.nav-cta)::before {
   content: "";
   background: #edf0f1;
   display: block;
@@ -107,6 +122,7 @@
 .main-nav-link.nav-cta:active {
   background-color: #edf0f1;
 }
+
 /* button-6 */
 
 /* MOBILE */
