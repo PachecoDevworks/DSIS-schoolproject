@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  /* Does NOT work on Safari */
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
+}
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.leftContainer {
+  max-width: 60rem;
+  margin-left: 2rem;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  width: 50rem;
+  height: 300px;
+  gap: 16rem;
+  margin-top: 1rem;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+/* 
+///////
+///////
+*/
+/* start of changeable styles */
+.random {
+  margin: 5rem 0 0 5rem;
+}
+.random2 {
+  margin: 1rem 0 0 5rem;
+}
+.random3 {
+  margin: 1rem 0 0 5rem;
+}
+.info {
+  margin: 3rem 5rem;
+}
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
+
+.progress {
+  width: 21px;
+  height: 200px;
+  border-radius: 5px;
+  border: solid 3px #4e4e4e;
+  background-color: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(180deg);
+}
+
+.progress2 {
+  width: 21px;
+  height: 200px;
+  border-radius: 5px;
+  border: solid 3px #4e4e4e;
+  background-color: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(180deg);
+}
+
+.progress3 {
+  width: 21px;
+  height: 200px;
+  border-radius: 5px;
+  border: solid 3px #4e4e4e;
+  background-color: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(180deg);
+}
+
+div.track {
+  position: relative;
+  width: 100%; /* Full width of the progress container */
+  height: 100%; /* Full height */
+  overflow: hidden;
+  -webkit-animation: prgBar 5s linear 0s infinite alternate;
+  animation: prgBar 5s linear 1;
+}
+
+div.bar {
+  width: 100%; /* Full width of the progress container */
+  height: 0%; /* Initially 0%, grows vertically */
+  background-color: #00ffff;
+  box-shadow: 0px 0px 5px #00ffff;
+  position: absolute;
+  top: 0; /* Start bar growth from the top */
+  transform: rotate(180deg);
+}
+
+@-webkit-keyframes prgBar {
+  0% {
+    height: 0%;
+  }
+  9.99% {
+    height: 0%;
+  }
+  10% {
+    height: 10%;
+  }
+  95% {
+    height: 100%;
+  }
+}
+
+@keyframes prgBar {
+  0% {
+    height: 0%;
+  }
+  9.99% {
+    height: 0%;
+  }
+  10% {
+    height: 10%;
+  }
+  95% {
+    height: 100%;
+  }
+}
+
+.globeImg {
+  background-image: url("/img/globeColored.png");
+  width: 100%;
+  height: 4rem;
+  margin-left: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.smartImg {
+  background-image: url("/img/smartColored.png");
+  width: 100%;
+  height: 4rem;
+  margin-left: -4rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.ditoImg {
+  background-image: url("/img/ditoColored.png");
+  width: 100%;
+  height: 4rem;
+  margin-left: -2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
