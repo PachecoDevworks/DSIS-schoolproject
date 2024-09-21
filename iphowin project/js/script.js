@@ -19,7 +19,6 @@ yearEl.textContent = currentYear;
 
 ///////////////////////////////////////////////////////////
 // Make mobile navigation work
-
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
 
@@ -29,20 +28,26 @@ btnNavEl.addEventListener("click", function () {
 
 ///////////////////////////////////////////////////////////
 // Smooth scrolling animation
-
 const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     const href = link.getAttribute("href");
 
+    // Allow default navigation for links that don't start with #
+    if (href !== "#" && !href.startsWith("#")) {
+      return; // Allow normal navigation
+    }
+
+    e.preventDefault(); // Prevent default for other links
+
     // Scroll back to top
-    if (href === "#")
+    if (href === "#") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
+    }
 
     // Scroll to other links
     if (href !== "#" && href.startsWith("#")) {
@@ -50,15 +55,15 @@ allLinks.forEach(function (link) {
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Close mobile naviagtion
-    if (link.classList.contains("main-nav-link"))
+    // Close mobile navigation if necessary
+    if (link.classList.contains("main-nav-link")) {
       headerEl.classList.toggle("nav-open");
+    }
   });
 });
 
 ///////////////////////////////////////////////////////////
 // Sticky navigation
-
 const sectionHeroEl = document.querySelector(".section-hero");
 
 const obs = new IntersectionObserver(
